@@ -1,5 +1,17 @@
 # arcsv-docker
-A docker container for the arc-sv tool
+> A docker container for the arc-sv tool
+
+## Notes
+I had to fork the original repo from [https://github.com/SUwonglab/arcsv](https://github.com/SUwonglab/arcsv) over to [https://github.com/phillip-a-richmond/arcsv.git](https://github.com/phillip-a-richmond/arcsv.git) and modify it in order to successfully build.
+
+Essentially what I ran into is that this was tested and run with python3.5, which isn't pip supported anymore. 
+
+However, when bumping to python3.11, it failed due to pysam conflict. 
+
+As pysam is hard-coded in the setup.py script, I had to modify this in my fork. 
+
+Bumping to pysam v0.20.0 resovled this conflict, and it's functioning in docker (but some reason failing in singularity). 
+
 
 ## How it was built
 1. Activate Docker app on mac
